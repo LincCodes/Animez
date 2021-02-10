@@ -12,7 +12,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Animez</h1>
 
-        <p className={styles.description}>Stream or Download free anime</p>
+        <p className={styles.description}>Stream or Download free anime.</p>
         </main>
     </div>
   )
