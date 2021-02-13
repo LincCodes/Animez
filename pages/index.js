@@ -1,49 +1,46 @@
 import React from "react";
 import Link from "next/link";
+import Image from 'next/image'
 import Layout from "../components/Layout";
+import { getPopular } from "animu-desu";
+import { useAmp } from 'next/amp'
 
-const Movies = ({ movies }) => {
+export const config = { amp: 'hybrid' }
+
+export const getStaticProps = async () =>{
+
+  const popular = await getPopular(1)
+
+  return {
+    props: {
+      popular
+    }
+  }
+}
+
+export default function Movies ({popular}) {
+  console.log(popular)
+  const isAmp = useAmp()
+
   return (
     <Layout>
-      <div className="movies">
-        <ul className="list">
-          {movies.map(movie => (
-            <li key={movie._id} className="list__item">
-              <Link href="/movie/[id]" as={`/movie/${movie._id}`}>
-                <a>
-                  {movie.poster && (
-                    <img
-                      src={imageUrlFor(movie.poster)
-                        .ignoreImageParams()
-                        .width(300)}
-                      width="100"
-                      height={100 / movie.posterAspect}
-                    />
-                  )}
-                  <div style={{ paddingTop: "0.2em" }}>
-                    {movie.releaseDate.substr(0, 4)}
-                  </div>
-                  <h3>{movie.title}</h3>
-                  {movie.director && (
-                    <span className="movies-list__directed-by">
-                      Directed by {movie.director}
-                    </span>
-                  )}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <div>Hello World</div>
+      <div className="flex flex-wrap justify-around">
+        {popular.map ( (pop) => {
+          return (
+            
+            <div key={pop.id}  className="m-4 w-1/4 shadow-lg flex-grow-1">
+
+              {isAmp ? (
+              <amp-img className="text-center" width="350" height="350" src={pop.Image} alt="a cool image" layout="responsive"/>
+              ) : (
+              <img className="text-center" width="350" height="350" src={pop.image} alt="a cool image" />
+              )}
+              <p>{pop.title}</p>
+            </div>
+          )
+        })}
       </div>
     </Layout>
   );
-};
-
-export const getStaticProps = async () => {
-  const movies = await sanity.fetch(query);
-  return {
-    props: { movies } // will be passed to the page component as props
-  };
-};
-
-export default Movies;
+}
