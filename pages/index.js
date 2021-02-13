@@ -19,14 +19,13 @@ export const getStaticProps = async () =>{
 }
 
 export default function Movies ({popular}) {
-  console.log(popular)
   const isAmp = useAmp()
 
   return (
     <Layout>
       <p className="text-white text-center text-2xl font-bold font-mono">POPULAR</p>
       <div className="flex flex-wrap justify-around">
-        {popular.map ( (pop) => {
+        {popular.map( (pop) => {
           return (
             
             <div key={pop.id}  className="m-2 w-fill sm:w-1/3 md:w-1/4 shadow-xl flex-grow-1 border rounded-md border-gray-800">
