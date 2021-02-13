@@ -1,19 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import sanity from "../lib/sanity";
-import listStyles from "../styles/list";
-import imageUrlFor from "../utils/imageUrlFor";
-
-const query = `*[_type == "movie"] {
-  _id,
-  title,
-  releaseDate,
-  poster,
-  "posterAspect": poster.asset->.metadata.dimensions.aspectRatio,
-  "director": crewMembers[job == "Director"][0].person->name
-}[0...50]
-`;
 
 const Movies = ({ movies }) => {
   return (
@@ -48,16 +35,6 @@ const Movies = ({ movies }) => {
           ))}
         </ul>
       </div>
-      <style jsx>{`
-        .movies {
-          padding: 1rem;
-        }
-        .movies-list__directed-by {
-          display: block;
-          font-size: 1rem;
-        }
-      `}</style>
-      <style jsx>{listStyles}</style>
     </Layout>
   );
 };
