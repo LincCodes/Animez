@@ -37,11 +37,8 @@ export default function Layout(props) {
         </Link>
       </nav>
       <div id="main">{props.children}</div>
-      <footer>
-        <h3>Made with love by
-        <a href="https://linc-codes.web.app">
-          Linc
-        </a></h3>
+      <footer className="p-4 flex justify-around justify-items-center text-lg font-semibold bg-black text-white">
+        <h3>Made with love by Linc 😍</h3><a href="https://linc-codes.web.app" className="text-blue-400 block">My Website</a>
       </footer>
     </div>
   );
