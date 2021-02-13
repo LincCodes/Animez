@@ -31,19 +31,25 @@ export const getServerSideProps = async (context) => {
 export default function Anime( {anime} ){
   const isAmp = useAmp()
 
+  let final = new Array();
+  for(let i = 1; i>anime.totalEpisodes; i++ ){
+    final.push(<li key={i}>{i}</li>);
+  }
+
   return (
     <Layout>
       <div className="flex flex-col flex-wrap items-center m-4">
-        <p>{anime.title}</p>
+        <p className="text-gray-300">{anime.title}</p>
         {isAmp ? (
-          <amp-img className="rounded-3xl" width="320" src={anime.Image} alt="a cool image" layout="responsive"/>
+          <amp-img className="rounded-3xl" width="300" src={anime.Image}  layout="responsive"/>
           ) : (
-          <img className="rounded-3xl" width="320" src={anime.image} alt="a cool image" />
+          <img className="rounded-3xl" width="300" src={anime.image} />
           )}
-          <p>{anime.summary}</p>
-          <p>Status: {anime.status}</p>
-          <p>Total Episodes: {anime.totalEpisodes}</p>            
-          <p>Type: {anime.type}</p>
+          <p className="text-gray-300">{anime.summary}</p>
+          <p className="text-gray-300">Status: {anime.status}</p>
+          <p className="text-gray-300">Total Episodes: {anime.totalEpisodes}</p>            
+          <p className="text-gray-300">Type: {anime.type}</p>
+          <ul>{final}</ul>
       </div>
     </Layout>
   );
