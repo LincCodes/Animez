@@ -7,9 +7,9 @@ export default function Layout(props) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet" />
         <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
-        <title>Sanity + Next.js = 💖</title>
+        <title>Animez</title>
       </Head>
       <nav>
         <Link href="/">
