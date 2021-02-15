@@ -20,7 +20,7 @@ export default function Movies ({popular}) {
   return (
     <div>
 
-<div className="heading text-center font-medium text-2xl m-5 text-gray-100 min-h-screen">POPULAR</div>
+<div className="heading text-center font-medium text-2xl m-5 text-gray-100">POPULAR</div>
   <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {popular.map( (pop) => {
           return (

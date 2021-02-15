@@ -22,7 +22,7 @@ export default function Category ({gen}) {
 
   return (
     <div>
-      <p className="heading text-center font-medium text-2xl m-5 text-gray-100 min-h-screen">CATEGORY</p>
+      <p className="heading text-center font-medium text-2xl m-5 text-gray-100">CATEGORY</p>
       <div className="flex flex-wrap justify-around">
         {gen.map( (g, i) => {
           return (

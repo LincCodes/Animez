@@ -38,7 +38,7 @@ export default function Anime( {anime} ){
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center">
         <div className="bg-white shadow-lg border border-gray-700 rounded-lg overflow-hidden my-4 w-11/12">
         <div className="flex items-center px-6 py-3 bg-gray-900">
             <h1 className="mx-3 text-white font-semibold text-lg">{anime.title}</h1>

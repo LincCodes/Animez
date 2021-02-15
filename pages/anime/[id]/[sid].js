@@ -7,11 +7,11 @@ export const getServerSideProps = async (context) => {
     const sid = context.query.sid
 
     try {
-        const anim = await getEpisodeLinks(id, parseInt(sid));
+        const anim = await getEpisodeLinks(id.toString(), parseInt(sid));
         const anime = anim[0]
         return {
             props:{
-              anime,
+              anime
             }
           }
     } catch (error) {

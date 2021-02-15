@@ -7,8 +7,7 @@ export const getServerSideProps = async (context) => {
 
   const id = context.query.id
   try {
-    const anim = await searchByGenre(id.toString())
-    const anime = anim[0]
+    const anime = await searchByGenre(id.toString())
     return {
         props:{
           anime,
@@ -28,7 +27,7 @@ export default function Genre( {anime} ){
   return (
     <div>
 
-<div className="heading text-center font-medium text-2xl m-5 text-gray-100 min-h-screen">GENRE</div>
+<div className="heading text-center font-medium text-2xl m-5 text-gray-100">GENRE</div>
   <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {anime.map( (pop) => {
           return (
