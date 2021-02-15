@@ -1,3 +1,3 @@
-# Animez
+## Animez
 
-## Sream and Download anime
+Building an app
