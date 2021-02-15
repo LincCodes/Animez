@@ -7,7 +7,7 @@ export const getServerSideProps = async (context) => {
 
   const id = context.query.id
   try {
-    const anime = await searchByGenre(id.toString())
+    const anim = await searchByGenre(id.toString())
     const anime = anim[0]
     return {
         props:{
