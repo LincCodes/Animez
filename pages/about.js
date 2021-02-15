@@ -9,7 +9,7 @@ export default function Anime( {anime} ){
             <p className="text-center">I don't like ads, so the app is ADS FREE.</p>
             <p className="text-center">ENJOY!!!!!!!!</p>
             <p className="text-center">NOTE:</p>
-            <p className="text-center">If the video does not appear, try reloading the page.</p>
+            <p className="text-center">If the video does not appear or shows an error, try reloading the page.</p>
             <p className="text-center">Avoid entering a wrong episode number in the input field because you will be redirected to the Homepage.</p>
             <p className="text-center">Join our <a href="https://t.me/freeanimez" className="text-blue-300">Telegram group</a> for questions, answers or any queries you might have during the operation of this web app. Don't be shy, we are all anime fans.</p>
             <div>
