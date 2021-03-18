@@ -68,7 +68,7 @@ export default function Layout(props) {
       </nav>
       <div id="main">{props.children}</div>
       <footer className="p-4 flex justify-around justify-items-center text-lg bg-black text-white">
-        <h3>Made with love @2021 😍</h3><a href="https://linc-codes.web.app" className="text-blue-400 block">My Website</a>
+        <h3>Made with love @2021 😍</h3><a href="https://linccodes.vercel.app" className="text-blue-400 block">My Website</a>
       </footer>
     </div>
   );
